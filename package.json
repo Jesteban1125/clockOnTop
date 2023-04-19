@@ -1,0 +1,53 @@
+{
+  "name": "clockontop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.simpleconnect4.app",
+    "icon": "assets/MacOS_Icon.icns",
+    "directories": {
+      "output": "build"
+    },
+    "productName": "ClockOnTop",
+    "mac": {
+      "target": ["dmg"],
+      "identity": null,
+      "category": "public.app-category.board-games"
+    },
+    "dmg": {
+      "background": "assets/DMG_Background.tiff",
+      "icon": "assets/MacOS_Icon.icns",
+      "iconSize": 75,
+      "window": {
+        "width": 544,
+        "height": 408
+      },
+
+      "contents": [
+        {
+          "x": 450,
+          "y": 280
+        },
+        {
+          "x": 450,
+          "y": 170,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^24.1.2",
+    "electron-builder": "^23.6.0"
+  }
+}
